@@ -1,6 +1,4 @@
-/* =========================
-   GLOBAL STYLES
-========================= */
+/* GLOBAL STYLES */
 
 *{
     margin:0;
@@ -22,9 +20,7 @@ body{
     overflow-x:hidden;
 }
 
-/* =========================
-   CUSTOM SCROLLBAR
-========================= */
+/* CUSTOM SCROLLBAR */
 
 ::-webkit-scrollbar{
     width:10px;
@@ -39,9 +35,7 @@ body{
     border-radius:20px;
 }
 
-/* =========================
-   NAVBAR
-========================= */
+/* NAVBAR */
 
 .navbar{
     position:fixed;
@@ -86,9 +80,7 @@ body{
     text-shadow:0 0 15px #38bdf8;
 }
 
-/* =========================
-   HERO SECTION
-========================= */
+/* HERO SECTION */
 
 .hero{
     min-height:100vh;
@@ -130,9 +122,7 @@ body{
     margin-bottom:30px;
 }
 
-/* =========================
-   BUTTONS
-========================= */
+/* BUTTONS */
 
 .hero-buttons{
     display:flex;
@@ -173,9 +163,7 @@ body{
     );
 }
 
-/* =========================
-   PROFILE IMAGE
-========================= */
+/* PROFILE IMAGE */
 
 .profile-box{
     width:350px;
@@ -221,9 +209,7 @@ body{
     }
 }
 
-/* =========================
-   SECTION STYLING
-========================= */
+/* SECTION STYLING */
 
 section{
     padding:90px 10%;
@@ -238,9 +224,7 @@ section{
     color:#38bdf8;
 }
 
-/* =========================
-   GLASS CARD
-========================= */
+/* GLASS CARD */
 
 .glass-card{
     background:rgba(255,255,255,0.06);
@@ -263,9 +247,7 @@ section{
     0 0 20px rgba(56,189,248,0.4);
 }
 
-/* =========================
-   EDUCATION
-========================= */
+/* EDUCATION */
 
 .education-container{
     display:grid;
@@ -275,9 +257,7 @@ section{
     gap:25px;
 }
 
-/* =========================
-   SKILLS
-========================= */
+/* SKILLS */
 
 .skills-grid{
     display:grid;
@@ -316,9 +296,7 @@ section{
     margin-bottom:10px;
 }
 
-/* =========================
-   PROJECTS
-========================= */
+/* PROJECTS */
 
 .project-grid{
     display:grid;
@@ -355,9 +333,7 @@ section{
     margin-bottom:15px;
 }
 
-/* =========================
-   CONTACT
-========================= */
+/* CONTACT */
 
 .contact-card{
     max-width:800px;
@@ -368,9 +344,7 @@ section{
     margin:15px 0;
 }
 
-/* =========================
-   FOOTER
-========================= */
+/* FOOTER */
 
 footer{
     text-align:center;
@@ -382,9 +356,7 @@ footer{
     background:rgba(255,255,255,0.03);
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
+/* RESPONSIVE */
 
 @media(max-width:900px){
 

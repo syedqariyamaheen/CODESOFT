@@ -8,7 +8,6 @@ let operator = null;
 let shouldResetDisplay = false;
 let historyText = '';
 
-// Add event listeners to all buttons
 document.querySelectorAll('.btn').forEach(button => {
     button.addEventListener('click', () => {
         const value = button.dataset.value;
@@ -27,7 +26,6 @@ document.querySelectorAll('.btn').forEach(button => {
     });
 });
 
-// Keyboard support
 document.addEventListener('keydown', (e) => {
     const key = e.key;
     
@@ -50,7 +48,6 @@ document.addEventListener('keydown', (e) => {
 });
 
 function handleNumber(value) {
-    // Check if display shows Error
     if (display.value === 'Error') {
         resetCalculator();
     }
@@ -60,17 +57,13 @@ function handleNumber(value) {
         shouldResetDisplay = false;
     }
     
-    // Prevent multiple decimal points
     if (value === '.' && currentInput.includes('.')) return;
-    
-    // Allow negative sign at start
     if (value === '-' && currentInput === '') {
         currentInput = '-';
         updateDisplay();
         return;
     }
     
-    // Limit input length
     if (currentInput.length >= 15) return;
     
     currentInput += value;
@@ -78,26 +71,26 @@ function handleNumber(value) {
 }
 
 function handleOperator(value) {
-    // Check if display shows Error
+    
     if (display.value === 'Error') {
         resetCalculator();
     }
     
-    // Handle negative numbers properly
+    
     if (value === '-' && currentInput === '' && previousInput === '') {
         currentInput = '-';
         updateDisplay();
         return;
     }
     
-    // If current input is just '-' treat it as 0
+
     if (currentInput === '-' || currentInput === '') {
         currentInput = '0';
     }
     
     const current = parseFloat(currentInput);
     
-    // If there's already an operator, calculate first
+    
     if (operator && !shouldResetDisplay) {
         const prev = parseFloat(previousInput);
         if (!isNaN(prev) && !isNaN(current)) {
@@ -119,7 +112,7 @@ function handleOperator(value) {
 }
 
 function handleEquals() {
-    // Check if display shows Error
+   
     if (display.value === 'Error') {
         resetCalculator();
         return;
@@ -130,13 +123,13 @@ function handleEquals() {
     const prev = parseFloat(previousInput);
     const current = parseFloat(currentInput);
     
-    // Check for invalid numbers
+   
     if (isNaN(prev) || isNaN(current)) {
         showError();
         return;
     }
     
-    // Check for empty inputs
+   
     if (previousInput === '' || currentInput === '') {
         showError();
         return;
@@ -163,11 +156,6 @@ function handleEquals() {
             result = prev / current; 
             break;
         case '%': 
-            // Handle percentage correctly
-            // If user types "100 % 9", it means "100% of 9" = 9
-            // But if user types "100 % 9", it could also mean modulo
-            // We'll implement it as: A % B = (A * B) / 100
-            // This is the standard calculator behavior
             result = (prev * current) / 100;
             break;
         default: 
@@ -175,16 +163,16 @@ function handleEquals() {
             return;
     }
     
-    // Check if result is valid number
+  
     if (!isFinite(result)) {
         showError();
         return;
     }
     
-    // Round to avoid floating point issues
+  
     result = parseFloat(result.toFixed(10));
     
-    // Update history with result
+  
     historyText = `${previousInput} ${getOperatorSymbol(operation)} ${currentInput} =`;
     updateHistory();
     
@@ -257,5 +245,4 @@ function updateHistory() {
     history.textContent = historyText;
 }
 
-// Initialize
 updateDisplay();
